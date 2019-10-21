@@ -23,5 +23,18 @@ namespace FormSubmission.Controllers
                 return View("../Home/Index");
             }
         }
+
+        [HttpPost("Login")]
+        public IActionResult Login(User userData)
+        {
+            if(ModelState.IsValid)
+            {
+                return RedirectToAction("Success", userData);
+            }
+            else
+            {
+                return View("../Home/Index");
+            }
+        } 
     }
 }
