@@ -29,5 +29,5 @@ html {
 
 .login-registration {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }

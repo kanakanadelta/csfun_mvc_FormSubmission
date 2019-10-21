@@ -12,11 +12,14 @@ namespace FormSubmission.Controllers
         }
 
         [HttpPost("register")]
-        public IActionResult Register(User userData)
+        public IActionResult Register(IndexViewModel modelData)
         {
+
+            User registrationData = modelData.UserRegistration;
+
             if(ModelState.IsValid)
             {
-                return RedirectToAction("Success", userData);
+                return RedirectToAction("Success", registrationData);
             }
             else
             {
@@ -25,11 +28,14 @@ namespace FormSubmission.Controllers
         }
 
         [HttpPost("Login")]
-        public IActionResult Login(User userData)
+        public IActionResult Login(IndexViewModel modelData)
         {
+
+            UserLogin loginData = modelData.UserLogin;
+
             if(ModelState.IsValid)
             {
-                return RedirectToAction("Success", userData);
+                return RedirectToAction("Success", loginData);
             }
             else
             {

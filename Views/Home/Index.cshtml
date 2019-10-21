@@ -2,7 +2,7 @@
     ViewData["Title"] = "Register User";
 }
 
-@model User
+@model IndexViewModel
 
 <div class="login-registration">
     <!-- Registration -->
@@ -14,75 +14,75 @@
                     <!-- First Name -->
                     <tr>
                         <td>
-                            <label asp-for="FirstName"></label>
+                            <label asp-for="UserRegistration.FirstName"></label>
                         </td>
                         <td>
-                            <input asp-for="FirstName">
+                            <input asp-for="UserRegistration.FirstName">
                         </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>
-                            <span style="color:red" asp-validation-for="FirstName"></span>
+                            <span style="color:red" asp-validation-for="UserRegistration.FirstName"></span>
                         </td>
                     </tr>
                     <!-- Last Name -->
                     <tr>
                         <td>
-                            <label asp-for="LastName"></label>
+                            <label asp-for="UserRegistration.LastName"></label>
                         </td>
                         <td>
-                            <input asp-for="LastName">
+                            <input asp-for="UserRegistration.LastName">
                         </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>
-                            <span style="color:red" asp-validation-for="LastName"></span>
+                            <span style="color:red" asp-validation-for="UserRegistration.LastName"></span>
                         </td>
                     </tr>
                     <!-- Age -->
                     <tr>
                         <td>
-                            <label asp-for="Age"></label>
+                            <label asp-for="UserRegistration.Age"></label>
                         </td>
                         <td>
-                            <input asp-for="Age">
+                            <input asp-for="UserRegistration.Age">
                         </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>
-                            <span style="color:red" asp-validation-for="Age"></span>
+                            <span style="color:red" asp-validation-for="UserRegistration.Age"></span>
                         </td>
                     </tr>
                     <!-- Email -->
                     <tr>
                         <td>
-                            <label asp-for="Email"></label>
+                            <label asp-for="UserRegistration.Email"></label>
                         </td>
                         <td>
-                            <input asp-for="Email">
+                            <input asp-for="UserRegistration.Email">
                         </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>
-                            <span style="color:red" asp-validation-for="Email"></span>
+                            <span style="color:red" asp-validation-for="UserRegistration.Email"></span>
                         </td>
                     </tr>
                     <!-- Password -->
                     <tr>
                         <td>
-                            <label asp-for="Password"></label>
+                            <label asp-for="UserRegistration.Password"></label>
                         </td>
                         <td>
-                            <input asp-for="Password">
+                            <input asp-for="UserRegistration.Password">
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <span style="color:red" asp-validation-for="Password"></span>
+                            <span style="color:red" asp-validation-for="UserRegistration.Password"></span>
                         </td>
                     </tr>
                     <tr>
@@ -98,7 +98,48 @@
     <!-- Login -->
     <div class="text-center">
         <h2>Log In</h2>
-        <form action=""></form>
+        <form asp-action="Login" asp-controller="Registration" method="POST">
+            <table>
+                <tbody>
+                    <!-- Email -->
+                    <tr>
+                            <td>
+                                <label asp-for="UserLogin.Email"></label>
+                            </td>
+                            <td>
+                                <input asp-for="UserLogin.Email">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <span style="color:red" asp-validation-for="UserLogin.Email"></span>
+                            </td>
+                        </tr>
+                        <!-- Password -->
+                        <tr>
+                            <td>
+                                <label asp-for="UserLogin.Password"></label>
+                            </td>
+                            <td>
+                                <input asp-for="UserLogin.Password">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span style="color:red" asp-validation-for="UserLogin.Password"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="submit" value="Submit">
+                            </td>
+                        </tr>
+                        
+                </tbody>
+            </table>
+        </form>
     </div>
 </div>
 
